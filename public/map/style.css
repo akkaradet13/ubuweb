@@ -1,0 +1,93 @@
+/* Web Font */
+* {
+    font-family: 'Prompt', sans-serif; 
+}
+
+/* Relative positioning*/
+#image-map {
+    position: relative;
+
+}
+
+/* Hide the original tooltips contents */
+.pin {
+    display: none;
+}
+
+/* Begin styling the tooltips and pins */
+.tooltip-up {
+    position: absolute;
+    /* background-pin */
+    /* background: url("../dist/messageImage_1688644593641.jpg"); */
+    /* background-color: rgba(255, 0, 0, 0.314); */
+    width: 40px;
+    height: 40px;
+}
+
+.tooltip-down {
+    position: absolute;
+    /* background-pin */
+    /* background: url("../dist/messageImage_1688644593641.jpg"); */
+    /* background-color: rgba(255, 0, 0, 0.314); */
+    width: 33px;
+    height: 85px;
+}
+
+
+
+
+
+.tooltip-down {
+    background-position: 0 -37px;
+}
+
+.tooltip {
+    display: none;
+    width: 300px;
+    cursor: help;
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    z-index: 999;
+    margin-left: -115px;
+    padding:15px;
+    color: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0 3px 0 rgb(252, 251, 251);
+    background: #4162e6;
+    background: linear-gradient(top, #fff1d3, #ffdb90);         
+}
+
+.tooltip::after {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    margin-left: -10px;
+    /* border-bottom: 10px solid #fff1d3; */
+    border-left: 10px solid transparent;
+    border-right : 10px solid transparent;
+}
+
+.tooltip-down .tooltip {
+    bottom: 12px;
+    top: auto;
+}
+
+.tooltip-down .tooltip::after {
+    bottom: -10px;
+    top: auto;
+    border-bottom: 0;
+    /* border-top: 10px solid #ffdb90; */
+}
+
+.tooltip h2 {
+    font: bold 1.3em 'Prompt', Tahoma, Arial;
+    margin: 0 0 10px;
+}
+
+.tooltip ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
