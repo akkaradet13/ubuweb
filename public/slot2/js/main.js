@@ -102,8 +102,8 @@ class playGame extends Phaser.Scene {
     spinWheel() {
 
         // can we spin the wheel?
-        if (this.canSpin) {
-
+        if (this.canSpin && sessionStorage.getItem('CanSpin') != "spin"){
+            sessionStorage.setItem("CanSpin", "spin");
             // resetting text field
             this.prizeText.setText("");
 
@@ -119,7 +119,7 @@ class playGame extends Phaser.Scene {
             var prize = gameOptions.slices - 1 - Math.floor(degrees / (360 / gameOptions.slices));
             console.log(prize);
             prize = ""
-            if ([359,360,0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27].includes(degrees)) {
+            if ([0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,341,342,343,344,345,346,347,348,349,350,351,352,353,354,355,356,357,358,359,360].includes(degrees)) {
                 var databaseRef = firebase.database().ref('slot2');
                 databaseRef.on('value', (snapshot) => {
                     const data = snapshot.val();
